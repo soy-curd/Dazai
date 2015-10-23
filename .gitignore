@@ -1,0 +1,4 @@
+*.pdf
+*.re
+doc/book-pdf
+tmp
