@@ -1,9 +1,9 @@
 PREDEF:
+  - preface.re
 
 CHAPS:
-  - doc.re
+  - chap01.re
 
 APPENDIX:
 
 POSTDEF:
-

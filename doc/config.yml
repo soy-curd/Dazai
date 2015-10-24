@@ -36,7 +36,7 @@ description:
 # coverfile: _cover.html
 # coverimage: 表紙用画像ファイル
 # coverimage: cover.png
-#titlepage: true
+titlepage: false
 # 固有IDに使用するドメイン
 # urnid: http://tatsu-zine.com/books/review-sample-book/1.0.0/
 # CSSファイル (yamlファイルおよびReVIEWファイルを置いたディレクトリにあること
