@@ -9,3 +9,5 @@ app/doc/book-pdf
 app/doc/catalog.yml
 app/doc/config.yml
 app/doc/*.md
+__pycache__
+logs

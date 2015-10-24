@@ -1,0 +1,70 @@
+<!doctype html>
+<head lang="ja">
+    <meta charset="UTF-8">
+    <title>Dazai</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.0.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/fakeLoader.css') }}" rel="stylesheet" >
+    <meta name="viewport" content="width=device-width" >
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div id="header" style="background-color : rgb(46, 204, 113); color: #ffffff;">
+        <div class="container">
+            <font size="300" color="#ffffff">Dazai</font>
+            <p>markdownファイルをpdfに変換するwebアプリです。</p>
+        </div>
+    </div>
+    <div class="container">
+        <div style="text-aling: center" id="fakeloader"></div>
+        <div  class="col-md-8 col-xs-12">
+
+            <!-- もしpdfの値が入っている場合、pdfを表示-->
+            <div class="row" style="margin:10px 10px 10px 10px;">
+                {% if pdfs %}
+                {% for x in pdfs %}
+                <!-- <a href="{{ x[1:] }}"><img src="{{ x[1:] }}" width="320px" style="margin: 5px 5px 5px 5px; border-radius:10px;"></a> -->
+                {% endfor %}
+                {% else %}
+                {% endif %}
+            </div>
+
+            <div class="row" style="margin:10px 10px 10px 10px;">
+                <div id="content"></div>
+                <script type="text/jsx" src="{{ url_for('static', filename='js/local.jsx') }}"></script>
+            </div>
+
+            <div class="row">
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div id="footer">
+                <p>soycurd1あっとgmail.com</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/fakeLoader.js') }}"></script>
+    <script type="text/javascript">
+        $("#button").click(function () {
+            $("#fakeloader").fakeLoader({
+                timeToHide: 200000,
+                zIndex: "500",
+                spinner: "spinner1",
+                bgColor: "rgba(255, 255, 255, 0.5)",
+                imagePath: "{{ url_for('static', filename='gifload.gif') }}"
+            });
+        });
+    </script>
+</body>

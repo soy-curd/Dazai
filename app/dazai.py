@@ -76,8 +76,8 @@ def make_book(config, preface, markdowns):
         os.path.join(doc_dir, 'catalog.yml')
         )
 
-    make_pdf(doc_dir)
-    list(map(print, chap_paths))
+    pdf_path = make_pdf(doc_dir)
+    return pdf_path
     
     
 def make_yml(config, tmpldir, tmplate, filename):
@@ -112,18 +112,24 @@ def md2re(markdown, filename, dir):
 def make_pdf(pdf_dir):
     current_dir = os.getcwd()
     os.chdir(pdf_dir)
+    
+    filename = "book.pdf"
     cmds = [
-        ["rm", "book.pdf"],
+        ["rm", filename],
         ["rm", "-r", "book-pdf"],
-        ["review-pdfmaker", "config.yml"],
-        ["cd", ".."]
+        ["review-pdfmaker", "config.yml"]
     ]
+    
     for cmd in cmds:
         call(cmd, shell=False)
-        
+    d = datetime.datetime.today()
+    newfilename = "book_" + d.strftime("%Y%m%d%H%M%S") + ".pdf"
+    os.rename(filename, "../static/pdf/" + newfilename)
+    
+    
     os.chdir(current_dir)
 
-    return pdf_dir
+    return newfilename
 
 if __name__ == '__main__':
     main()
