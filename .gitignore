@@ -2,3 +2,4 @@
 *.re
 doc/book-pdf
 tmp
+.DS_Store
