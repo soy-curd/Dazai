@@ -3,3 +3,9 @@
 doc/book-pdf
 tmp
 .DS_Store
+.pyc
+*.python-version
+app/doc/book-pdf
+app/doc/catalog.yml
+app/doc/config.yml
+app/doc/*.md

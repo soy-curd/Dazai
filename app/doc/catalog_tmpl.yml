@@ -1,0 +1,17 @@
+PREDEF:
+  - {{ PREDEF }}
+
+CHAPS:
+{%- for chap in CHAPS %}
+  - {{ chap }}
+{%- endfor %}
+
+APPENDIX:
+{%- if APPENDIX %}
+  - {{ APPENDIX }}
+{%- endif %}
+
+POSTDEF:
+{%- if POSTDEF %}
+  - {{ POSTDEF }}
+{%- endif %}
