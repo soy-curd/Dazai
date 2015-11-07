@@ -48,8 +48,8 @@ secnolevel: 3
 epubversion: 3
 # HTMLのバージョン(現時点では4または5。デフォルトは4。epubversionを3にした場合は自動で5に設定される)
 htmlversion: 5
-# 目次生成用？
-mytoc: true
+# 目次生成用
+toc: true
 # 奥付生成用
 colophon: true
 texstyle: reviewmacro
